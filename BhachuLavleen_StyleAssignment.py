@@ -25,21 +25,27 @@ class Person:
     A person. 
 
     === Attributes === 
+    name: a way to reference the person
     appearance: a list of strings describing elements of a persons physical appearance.
     '''
+    name: str
     appearance: List[str]
 
-    def __init__(self, traits: List[str]) -> None:
+    def __init__(self, name: str, traits: List[str]) -> None:
         '''
         Initializes a new Person Object.
         '''
+        self.name = name
         self.appearance = traits
 
     def __str__(self) -> str:
         '''
         A string representation for a Person Object.
         '''
-        pass
+        lst = ""
+        for trait in self.appearance: 
+            lst += "-" + trait + "\n"
+        return "name: " + self.name + "\nappearance: \n" + lst
 
 class Autobus: 
     '''
@@ -67,56 +73,72 @@ class Autobus:
         Changes the current station for the bus.
         '''
         self.station = new_station
+        print("station: %s" % new_station)
     
     def board_bus(self, passenger: Person) -> None: 
         '''
         Called when a passenger boards the bus.
         '''
-        pass
+        self.passengers.append(passenger)
+        print("%s boarded the bus" % passenger.name)
     
     def exit_bus(self, passenger: Person) -> None: 
         '''
         Called when a passenger exits the bus.
         '''
-        pass
+        self.passengers.remove(passenger)
+        print("%s exited the bus" % passenger.name)
 
-class JostlingError(Exception): 
+class JostlingError: 
     '''
     Exception raised when jostling occurs.
     '''
-
+    def __init__(self) -> None:
+        pass 
     def __str__(self) -> str:
-        return super().__str__()
+        return "JostlingError: A passenger is accusing another of stepping on his new kicks!"
 
 
+if __name__ == "__main__":
 
-""" today = datetime.time(12, 00)
-print("the time is %d", (today))
+    ### the setting ###
+    initial_station = "Parc Monceau district platform"
+    time = datetime.time(12, 17)
+    print("time: " + str(time))
+    print("---")
 
-S_bus = {"seat1": "", "seat2": "another man", "seat3": "", "pole1" : "long neck man"}
-report = "S bus contains: \n"
-for passenger in S_bus: 
-    report += S_bus[passenger]
-    report += "\n"
-print(report)
+    ### the characters ### 
+    person1 = Person("long-neck dude", ["with an annoyingly long neck", "with a stupid hat", "rude youngster"])
+    person2 = Person("narrator", ["observant", "confused", "annoyed"])
+    person3 = Person("another passenger", ["unkonwn traits"])
+    person4 = Person("a friend", ["fashionable", "giving much needed advice on a button."])
 
-S_bus["seat1"] = "narrator"
-report = "S bus contains: \n"
-for passenger in S_bus: 
-    report += S_bus[passenger]
-    report += "\n"
-print(report)
+    S = Autobus("S", initial_station, [person1, person3])
+    print("the %s line is boarding" % S.line)
+    print("---")
+    S.board_bus(person2)
+    print("---")
+    for passenger in S.passengers: 
+        print(passenger)
+    
+    print("---")
 
-S_bus["seat2"] = ""
-for passenger in S_bus: 
-    report += S_bus[passenger]
-    report += "\n"
-try:
-    print(x)
-except: 
-    print("JoustingException: Long neck man is accusing another passenger of jousting him.")
-print(report)
+    next_station = "next staton"
+    S.change_station(next_station)
+    print("the %s line has stopped at %s" % (S.line, next_station))
+    S.exit_bus(person3)
+    jostling = JostlingError()
+    print(jostling)
+    
+    print("---")
 
-print("==================================================")
-print("==================================================")
-print("S_") """
+    last_station = "gare Saint-Lazare"
+    time2 = datetime.time(14, 17)
+    diff = time2.hour - time.hour
+    print("time: " + str(time2) + ", %d hour(s) have passed" % diff)
+    print("---")
+
+    S.change_station(last_station)
+    print("---")
+    print(person1.name + " is with " + person4.name)
+    print(person4)
