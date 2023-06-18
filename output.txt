@@ -1,0 +1,37 @@
+time: 12:17:00
+---
+the S line is boarding
+---
+narrator boarded the bus
+---
+name: long-neck dude
+appearance: 
+-with an annoyingly long neck
+-with a stupid hat
+-rude youngster
+
+name: another passenger
+appearance: 
+-unkonwn traits
+
+name: narrator
+appearance: 
+-observant
+-confused
+-annoyed
+
+---
+station: next staton
+the S line has stopped at next staton
+another passenger exited the bus
+JostlingError: A passenger is accusing another of stepping on his new kicks!
+---
+time: 14:17:00, 2 hour(s) have passed
+---
+station: gare Saint-Lazare
+---
+long-neck dude is with friend
+name: friend
+appearance: 
+-fashionable
+-giving much needed advice on a button.
