@@ -3,7 +3,7 @@ Lavleen Bhachu
 WRI310 - Style Assignment 
 June 19, 2023
 =============================
-Use this github link to view the code and the output of the program: 
+Use this github link to view the code and the output of the program: https://github.com/lavleenb/WRI310-StyleAssignment.git
 =============================
 Running Instructions (with the Python built-in IDE): 
 - open the file (it will open automatically with the built-in IDE).
