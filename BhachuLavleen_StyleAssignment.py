@@ -12,7 +12,7 @@ Running Instructions (with the Python built-in IDE):
 - there is no need for the end-user to input anything; just run the module and enjoy :)
 =============================
 
-Python Print Statements.
+Python.
 '''
 
 import datetime
