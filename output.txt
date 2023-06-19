@@ -1,14 +1,15 @@
-time: 12:17:00
+time: 12:17:00 at Parc Monceau district platform station
 ---
 the S line is boarding
 ---
 narrator boarded the bus
 ---
+passenger list: 
 name: long-neck dude
 appearance: 
 -with an annoyingly long neck
 -with a stupid hat
--rude youngster
+-rude
 
 name: another passenger
 appearance: 
@@ -24,14 +25,14 @@ appearance:
 station: next staton
 the S line has stopped at next staton
 another passenger exited the bus
-JostlingError: A passenger is accusing another of stepping on his new kicks!
+JostlingError: A passenger is accusing another of stepping on his toes!
 ---
 time: 14:17:00, 2 hour(s) have passed
 ---
 station: gare Saint-Lazare
 ---
-long-neck dude is with friend
-name: friend
+long-neck dude is with a friend
+name: a friend
 appearance: 
 -fashionable
 -giving much needed advice on a button.

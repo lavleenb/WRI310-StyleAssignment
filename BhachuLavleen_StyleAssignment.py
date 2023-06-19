@@ -89,14 +89,14 @@ class Autobus:
         self.passengers.remove(passenger)
         print("%s exited the bus" % passenger.name)
 
-class JostlingError: 
+class JostlingError:
     '''
     Exception raised when jostling occurs.
     '''
     def __init__(self) -> None:
         pass 
     def __str__(self) -> str:
-        return "JostlingError: A passenger is accusing another of stepping on his new kicks!"
+        return "JostlingError: A passenger is accusing another of stepping on his toes!"
 
 
 if __name__ == "__main__":
@@ -104,11 +104,11 @@ if __name__ == "__main__":
     ### the setting ###
     initial_station = "Parc Monceau district platform"
     time = datetime.time(12, 17)
-    print("time: " + str(time))
+    print("time: " + str(time) + " at %s station" % initial_station)
     print("---")
 
     ### the characters ### 
-    person1 = Person("long-neck dude", ["with an annoyingly long neck", "with a stupid hat", "rude youngster"])
+    person1 = Person("long-neck dude", ["with an annoyingly long neck", "with a stupid hat", "rude"])
     person2 = Person("narrator", ["observant", "confused", "annoyed"])
     person3 = Person("another passenger", ["unkonwn traits"])
     person4 = Person("a friend", ["fashionable", "giving much needed advice on a button."])
@@ -118,6 +118,7 @@ if __name__ == "__main__":
     print("---")
     S.board_bus(person2)
     print("---")
+    print("passenger list: ")
     for passenger in S.passengers: 
         print(passenger)
     
